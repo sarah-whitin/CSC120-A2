@@ -1,10 +1,28 @@
 class Computer:
+    name: str
+    os: str
+    price: float
+    year: int
 
-    # What attributes will it need?
+    # Setting up attributes:
+        # OS
+        # Price 
+    def __init__(self, name: str, system:str, value: float, year: int):
+        self.name = name
+        self.os = system
+        self.price = value
+        self.year = year
 
-    # How will you set up your constructor?
-    # Remember: in python, all constructors have the same name (__init__)
-    def __init__():
-        pass # You'll remove this when you fill out your constructor
-
-    # What methods will you need?
+    # Methods: 
+    # Things the computer can do for itself
+        # Know its OS
+    def getOS(self):
+        return self.os
+    
+        #Know its Price
+    def getPrice(self):
+        return self.price
+    
+        # KNow its year
+    def getYear(self):
+        return self.year

@@ -1,10 +1,21 @@
-class ResaleShop:
+from ResaleShope import  ResaleShop
 
-    # What attributes will it need?
+def main():
+    # getting original inventory
+    myShop: ResaleShop = ResaleShop(["mac1", "pc1", "chrome1", "mac2", "hp1", "mac3", "hp2015"])
+    print("og inventory:", end="" )
+    myShop.getInventory()
 
-    # How will you set up your constructor?
-    # Remember: in python, all constructors have the same name (__init__)
-    def __init__():
-        pass # You'll remove this when you fill out your constructor
+    # buying a computer 
+    myShop.buy("mac2025")
+    print("updated inventory:", end="" )
+    myShop.getInventory()
 
-    # What methods will you need?
+    # selling a computer
+    myShop.sell("pc1")
+    print("updated inventory:", end="" )
+    myShop.getInventory()
+
+
+if __name__ == "__main__":
+    main()
