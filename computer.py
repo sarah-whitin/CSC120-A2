@@ -1,17 +1,23 @@
 class Computer:
-    name: str
-    os: str
-    price: float
-    year: int
+    description: str
+    processorType: str
+    hardDriveCapacity: int
+    memory: int
+    operatingSystem: str
+    yearMade: int
+    price: int
 
     # Setting up attributes:
         # OS
         # Price 
-    def __init__(self, name: str, system:str, value: float, year: int):
-        self.name = name
-        self.os = system
-        self.price = value
-        self.year = year
+    def __init__(self,description: str, processorType: str, hardDriveCapacity: int, memory: int, operatingSystem: str, yearMade: int, price: int):
+        self.description = description
+        self.processorType = processorType
+        self.hardDriveCapacity = hardDriveCapacity
+        self.memory = memory
+        self.operatingSystem = operatingSystem
+        self.yearMade = yearMade
+        self.price = price
 
     # Methods: 
     # Things the computer can do for itself
@@ -26,3 +32,10 @@ class Computer:
         # KNow its year
     def getYear(self):
         return self.year
+
+        # set its price
+    def setPrice(self, price: int):
+        self.price = price
+
+    def setOS(self, operatingSystem: str):
+        self.operatingSystem = operatingSystem
