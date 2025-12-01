@@ -14,7 +14,7 @@ class ResaleShop:
 
     # sell = remove from inventory
     def sell(self, sold:Computer):
-        if self.inventory.contains(sold):
+        if sold in self.inventory:
             self.inventory.remove(sold)
         else:
             print("Computer is not in inventory")
@@ -24,8 +24,8 @@ class ResaleShop:
     def printInventory(self):
         print("")
         print("Your current computers include:")
-        for idx in self.inventory:
-            print(idx.name)
+        for computer in self.inventory:
+            print(computer.description)
         # specifying if user has no computers
         if self.inventory == []:
             print("Shop has no computers.")
@@ -33,8 +33,8 @@ class ResaleShop:
     # Refurbish
     def refurbish(self, comp : Computer):
         # assign price based off year
-        if self.inventory.contains(comp):
-            year = comp.getYear()
+        if comp in self.inventory:
+            year = comp.yearMade
             if year < 2000:
                 comp.setPrice(0)
             if year < 2012:
@@ -45,3 +45,18 @@ class ResaleShop:
                 comp.setPrice(1000)
         else:
             print("Computer is not in inventory")
+
+def main():
+    shop = ResaleShop()
+    comp1 = Computer("Used Mac", "M3", 2, 3, "Mac", 2020, 800)
+    comp2 = Computer("oldie", "windows", 3, 2, "windows", 1990, 1000)
+    shop.buy(comp1)
+    shop.buy(comp2)
+    shop.refurbish(comp1)
+    shop.refurbish(comp2)
+    shop.printInventory()
+    print(comp1.price)
+    print(comp2.price)
+
+if __name__ == "__main__":
+    main()
