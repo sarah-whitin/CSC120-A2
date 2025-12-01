@@ -21,15 +21,15 @@ class Computer:
 
     # Methods: 
     # Things the computer can do for itself
-        # Know its OS
+        # get its OS
     def getOS(self):
         return self.os
     
-        #Know its Price
+        #get its Price
     def getPrice(self):
         return self.price
     
-        # KNow its year
+        # get its year
     def getYear(self):
         return self.year
 
@@ -37,5 +37,6 @@ class Computer:
     def setPrice(self, price: int):
         self.price = price
 
+        # set is operating system
     def setOS(self, operatingSystem: str):
         self.operatingSystem = operatingSystem
